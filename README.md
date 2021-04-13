@@ -68,6 +68,20 @@ The server will then be listening at `localhost:3000`, so set the authorization 
 
 The `master` branch of this repository is what you will be deploying. To update to a new version with potential bugfixes, all you have to do is run the `now` command again and then set the authorization callback URL on GitHub to the new URL that `now` gave you! 👌
 
+## Run with Docker
+
+Run using the published image:
+
+```bash
+docker run -it --rm -p 3000:3000 -e GH_CLIENT_ID=XXX -e GH_CLIENT_SECRET=YYY -e REDIRECT_URL=http://localhost:19006 ghcr.io/vemonet/micro-github
+```
+
+Build:
+
+```bash
+docker build -t ghcr.io/vemonet/micro-github .
+```
+
 ## License
 
 Copyright (c) 2017 Maximilian Stoiber, licensed under the MIT license. See [LICENSE.md](LICENSE.md) for more information.
